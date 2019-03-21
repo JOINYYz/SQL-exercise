@@ -9,3 +9,17 @@ CREATE TABLE `employees` (
 PRIMARY KEY (`emp_no`));
 
 A1：select * from employees where hire_date=(select max(hire_date) from employees);
+
+Q2：查找入职员工时间排名倒数第三的员工所有信息
+CREATE TABLE `employees` (
+`emp_no` int(11) NOT NULL,
+`birth_date` date NOT NULL,
+`first_name` varchar(14) NOT NULL,
+`last_name` varchar(16) NOT NULL,
+`gender` char(1) NOT NULL,
+`hire_date` date NOT NULL,
+PRIMARY KEY (`emp_no`));
+
+A2：select * from employees order by hire_date desc limit 2,1;
+（SELECT * from 表名 LIMIT 开始位置，行数）
+(从第二行开始，往后选一行，如果是第一行开始，应该是0不是1）
