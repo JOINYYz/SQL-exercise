@@ -1,1 +1,1 @@
-# SQL-exercise
+# 牛客网 SQL练习题
